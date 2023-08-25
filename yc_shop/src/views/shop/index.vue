@@ -320,6 +320,7 @@ export default {
     // 筛选
     selectShopByCategory() {
       // 分类id拿到进行筛选
+      // alert(this.categorySelect)
       selectShopByCategoryBackend(this.categorySelect).then((res) => {
         // console.log(res.data);
         this.total = res.data.total;
@@ -634,7 +635,7 @@ export default {
       getShopListByPageInfo({
         pageNum: this.currentPageNum,
         pageSize: this.currentPageSize,
-        categorySelect:this.categorySelect
+        categorySelect: this.categorySelect,
       }).then((result) => {
         this.shopData = [];
         // console.log(result.data)
@@ -649,7 +650,7 @@ export default {
       getShopListByPageInfo({
         pageNum: this.currentPageNum,
         pageSize: size,
-        categorySelect:this.categorySelect
+        categorySelect: this.categorySelect,
       }).then((result) => {
         this.shopData = [];
         this.changeShopDataFormdata(result.data.row, result.data);

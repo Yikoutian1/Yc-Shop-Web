@@ -2,7 +2,7 @@ import request from "@/utils/request";
 
 export function shopInfoAdd(info) {
   return request({
-    url: "/shop/shopInfoAdd",
+    url: "/shop/addShopInfo",
     method: "post",
     data: info,
   });
@@ -19,35 +19,41 @@ export function searchByName(info) {
   return request({
     url: "/shop/searchByName",
     method: "get",
-    name: info,
+    params: {
+      name: info,
+    },
   });
 }
 export function getImgById(info) {
   return request({
     url: "/shop/getImgById",
     method: "get",
-    id: info,
+    params: {
+      id: info,
+    },
   });
 }
 export function saveShop(info) {
   return request({
-    url: "/shop/getImgById",
+    url: "/shop/saveShop",
     method: "post",
     id: info,
   });
 }
 export function delShopBatchByIds(info) {
   return request({
-    url: "/shop/getImgById",
+    url: "/shop",
     method: "delete",
     ids: info,
   });
 }
 export function selectShopByCategoryBackend(info) {
   return request({
-    url: "/shop/selectShopByCategoryBackend",
+    url: "/shop/selectShopByCategory",
     method: "get",
-    id: info,
+    params: {
+      id: info,
+    },
   });
 }
 export function changeShopStatusBatch(info) {
