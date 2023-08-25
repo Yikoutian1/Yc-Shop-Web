@@ -35,6 +35,7 @@
         >批量停售</span
       >
       <el-button type="primary" @click="addShop"> + 新增商品 </el-button>
+      <el-button @click="reflash"> 刷新商品列表 </el-button>
     </div>
     <el-table :data="shopData" @selection-change="handleSelectionChange">
       <el-table-column type="selection" property="id" label="编号" width="60" />
@@ -291,6 +292,7 @@ export default {
       })
         .then(() => {
           this.getSelectionIds();
+          // console.log(this.selectedIds)
           delShopBatchByIds(this.selectedIds).then((res) => {
             if (res.code === 200) {
               this.queryShopPageList();
@@ -686,6 +688,13 @@ export default {
         this.total = parseInt(data.total);
       }
       // console.log(this.shopData)
+    },
+    reflash(){
+      this.selectedItems = []
+      this.input = ''
+      this.diaFormCategoryName = ''
+      this.categorySelect = ''
+      this.queryShopPageList()
     },
     // 更新商品页
     queryShopPageList() {

@@ -37,14 +37,14 @@ export function saveShop(info) {
   return request({
     url: "/shop/saveShop",
     method: "post",
-    id: info,
+    data: info,
   });
 }
 export function delShopBatchByIds(info) {
   return request({
     url: "/shop",
     method: "delete",
-    ids: info,
+    data: info,
   });
 }
 export function selectShopByCategoryBackend(info) {
