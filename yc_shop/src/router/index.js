@@ -63,7 +63,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: "/shop",
     name: "Example",
-    meta: { title: "购物后台信息管理", icon: "el-icon-s-help" },
+    meta: { title: "商品分类信息管理", icon: "el-icon-s-help" },
     children: [
       {
         path: "category",
@@ -79,7 +79,18 @@ export const constantRoutes = [
       },
     ],
   },
-
+  {
+    path: "/orders",
+    component: Layout,
+    children: [
+      {
+        path: "index",
+        name: "Orders",
+        component: () => import("@/views/orders/index"),
+        meta: { title: "订单管理", icon: "tree" },
+      },
+    ],
+  },
   {
     path: "/form",
     component: Layout,

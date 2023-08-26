@@ -57,9 +57,9 @@
       </el-table-column>
       <el-table-column property="name" label="商品名" width="200" />
       <el-table-column property="category" label="分类" width="120" />
-      <el-table-column property="price" label="价格" width="100" />
-      <el-table-column property="sales" label="销量" width="120" />
-      <el-table-column property="inventory" label="库存" width="120" />
+      <el-table-column property="price" label="价格" width="80" />
+      <el-table-column property="sales" label="销量" width="80" />
+      <el-table-column property="inventory" label="库存" width="80" />
       <el-table-column label="状态" width="80">
         <template slot-scope="scope">
           <div :class="{ statuschange: scope.row.status == '停售' }">
