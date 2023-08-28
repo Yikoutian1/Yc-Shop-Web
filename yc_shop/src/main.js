@@ -17,6 +17,17 @@ import '@/permission' // permission control
 
 import axios from "axios";
 import request from "@/utils/request";
+//引入 ECharts 主模块
+let echarts = require('echarts/lib/echarts');
+
+//按需引入echart折线图等组件
+require('echarts/lib/chart/line');
+// 引入提示框和title组件
+require('echarts/lib/component/tooltip');
+require('echarts/lib/component/title');
+require('echarts/lib/component/grid');
+//vue全局注入echarts
+Vue.prototype.$echarts = echarts;
 
 
 Vue.prototype.$axios = axios;
